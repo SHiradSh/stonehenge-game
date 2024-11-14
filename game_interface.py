@@ -8,25 +8,25 @@ strategy cannot be used on Chopsticks unless you account for infinite loops.
 (You do not have to worry about this for the assignment: only do it for
 your own curiousity!)
 """
-# TODO: import the modules needed to make game_interface run.
 from strategy import interactive_strategy, recursive_strategy, \
     rough_outcome_strategy, iterative_strategy
-from typing import Any, Callable
 from subtract_square_game import SubtractSquareGame
 from stonehenge import StoneHenge
 
-# TODO: Replace None with the corresponding class name for your games.
-# 'h' should map to Stonehenge.
-playable_games = {'s': SubtractSquareGame,
-                  'h': StoneHenge}
 
-# TODO: Replace None with the corresponding function names for your strategies.
-# 'mr' should map to your recursive implementation of minimax while
-# 'mi' should map to your iterative implementation of minimax
-usable_strategies = {'i': interactive_strategy,
-                     'ro': rough_outcome_strategy,
-                     'mr': recursive_strategy,
-                     'mi': iterative_strategy}
+# 'h' should map to Stonehenge, 's' to SubtractSquareGame
+playable_games = {
+    's': SubtractSquareGame,
+    'h': StoneHenge
+}
+
+# Map strategy keys to actual strategy functions
+usable_strategies = {
+    'i': interactive_strategy,
+    'ro': rough_outcome_strategy,
+    'mr': recursive_strategy,
+    'mi': iterative_strategy
+}
 
 
 class GameInterface:
